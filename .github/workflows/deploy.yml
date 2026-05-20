@@ -30,8 +30,8 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         IMAGE_TAG: latest
-      run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+     run: |
+  docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./Springboot-API-REST-DESPACHO$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
     - name: Desplegar en EC2 vía SSH
       uses: appleboy/ssh-action@v1.0.3
